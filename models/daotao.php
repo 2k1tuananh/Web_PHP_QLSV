@@ -37,7 +37,10 @@
             $sql = "select * from $table";
             return $this->execute($sql);
         }
-
+        public function getAllData_gv(){
+            $sql = "select * from giangvien where role_id=2";
+            return $this->execute($sql);
+        }
         public function getGiaoVienCN($machuyennganh)
         {
             $sql = "select magiangvien,hovaten from giangvien where chuyennganh = '$machuyennganh'";

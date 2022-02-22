@@ -121,9 +121,9 @@
                 </tr>
             </tbody>
         </table>
-        <b>Tổng số tín chỉ tích lũy: </b><span> <?php   if($data != []) echo  $tongtin['tongtin']; ?></span>
-        <br/>
-        <b>Trung bình chung tích lũy: </b><span ><?php if($data != [])  echo round($tongdiem['tongdiem']/$tongtin['tongtin'],2); ?></span>
+        <b>Tổng số tín chỉ tích lũy: </b><span id="ctl00_c_lblTongSoTinChiTichLuy"><?php echo $tongtin['tongtin']; ?></span>
+        <br />
+        <b>Trung bình chung tích lũy: </b><span id="ctl00_c_lblTrungBinhTrungTichLuy"><?php if($tongtin['tongtin']==0){echo "";} else{ echo round($tongdiem['tongdiem'] / $tongtin['tongtin'], 2);} ?></span>
         <br />
     </div>
     <div class="modal-footer">

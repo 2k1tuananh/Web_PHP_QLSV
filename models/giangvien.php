@@ -44,7 +44,7 @@
             return $data;
         } 
         public function tongtin($msv){
-            $sql = "select SUM(sotinchi) as tongtin from `sinhvien-diemmon` inner join `monhoc` on `sinhvien-diemmon`.mamon=`monhoc`.mamon WHERE masinhvien='$msv'";
+            $sql = "select SUM(sotinchi) as tongtin from `sinhvien-diemmon` inner join `monhoc` on `sinhvien-diemmon`.mamon=`monhoc`.mamon WHERE masinhvien='$msv' and `sinhvien-diemmon`.diemcuoiky!='' ";
             $this->execute($sql);
             if($this->dem()!=0){
                 $data = mysqli_fetch_array($this->result);

@@ -142,7 +142,10 @@
             <h3 class="title">Góc giáo viên</h3>
 
             <ul class="sub-menu" style="display: block">
-
+              <li class="chon">
+              <a style="text-decoration: none" href="?controller=sinhvien">
+                Thông tin cá nhân</a>
+              </li>                                                                             
               <li><a style=" text-decoration: none;" href="?controller=daotao&action=giangvien">Quản lý giáo viên</a></li>
               <li><a style=" text-decoration: none;" href="?controller=daotao&action=giangday">Phân công giảng dạy</a></li>
 

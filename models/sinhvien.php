@@ -133,7 +133,7 @@
             return $ListUser;
         }
         public function mkchecksinhvien($tk,$pass){
-            $sql = "select * from `sinhvien` where `masinhvien`='$tk' and `password`='$pass'";
+            $sql = "select * from `sinhvien` where `masinhvien`='$tk' and `password`='$pass' and trangthai_sv='Đang học'";
             $data=$this->execute($sql);
             return $data;
         }

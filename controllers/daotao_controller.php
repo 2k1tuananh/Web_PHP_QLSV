@@ -94,7 +94,7 @@ class daotao_controller {
         $listMonHoc = $this->daotao->monhocgiangvien();
         $listMonHoc1 = $this->daotao->getAllData('monhoc');
         $listChuyenNganh = $this->daotao->getAllData('chuyennganh');
-        $listGiangVien = $this->daotao->getAllData('giangvien');
+        $listGiangVien = $this->daotao->getAllData_gv('giangvien');
         $listLop = $this->daotao->listlop();
         //$listGiangVien = $this->daotao->giaovienmonhoc();
         //$listGiangVienMonHoc = $this->daotao->getAllData('gv-monhoc');
@@ -200,7 +200,7 @@ class daotao_controller {
         
                     }
                     echo '<option value="" >Không chủ nhiệm lớp nào</option>'; 
-                    require_once("./view/daotao/DanhSachGiaoVien.php");
+                    //require_once("./view/daotao/DanhSachGiaoVien.php");
                 }
                 else{
                     echo '<option value="">Không chủ nhiệm lớp nào</option>'; 
@@ -212,7 +212,7 @@ class daotao_controller {
                 $getmgv = substr($magiangvien['magiangvien'], 2); 
                 
                 $listChuyenNganh = $this->daotao->getAllData('chuyennganh');
-                $listGiangVien = $this->daotao->getAllData('giangvien');
+                $listGiangVien = $this->daotao->getAllData_gv();
                 $listlopCN = $this->daotao->getAllData('lopcn');
                 require_once("./view/daotao/DanhSachGiaoVien.php");
             }
