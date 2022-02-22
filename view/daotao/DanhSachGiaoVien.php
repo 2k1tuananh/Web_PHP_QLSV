@@ -178,12 +178,20 @@
     </select>
   </div>
 
+<<<<<<< HEAD
   <table cellspacing="3" cellpadding="0" border="0px" width="100%">
+=======
+  <table cellspacing="3" cellpadding="0"  width="100%">
+>>>>>>> fc76d91db7199150d07fb328b996b8e6f8e8aca7
     <tbody>
       <tr valign="top">
         <td style="width: 100%">
           <div id="bangdiem1">
+<<<<<<< HEAD
             <table class="grid" cellspacing="0" border="0" id="ctl00_c_GridDC" style="
+=======
+            <table class="grid" cellspacing="0"  id="ctl00_c_GridDC" style="
+>>>>>>> fc76d91db7199150d07fb328b996b8e6f8e8aca7
                           border-style: None;
                           width: 100%;
                           border-collapse: collapse;
@@ -282,7 +290,11 @@
       </div>
       <div class="modal-body">
 
+<<<<<<< HEAD
         <table width="100%">
+=======
+        <table width="100%" >
+>>>>>>> fc76d91db7199150d07fb328b996b8e6f8e8aca7
           <tbody class="table">
             <tr>
               <td class="modal-td" width="30%">Mã GV:</td>

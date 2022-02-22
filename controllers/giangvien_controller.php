@@ -96,12 +96,16 @@ class giangvien_controller {
     function updiem()
     {
         $mamon=$this->giangvien->getinfo_mamon($_GET['tenmon']);
+<<<<<<< HEAD
         if(isset($_GET['diemtongket'])){
             $data=$this->giangvien->updiem($mamon['mamon'], $_GET['masinhvien'], $_GET['diemquatrinh'], $_GET['diemcuoiky'], $_GET['diemtongket']);
         }
         else{
             $data=$this->giangvien->updiemqt($mamon['mamon'], $_GET['masinhvien'], $_GET['diemquatrinh']);
         }
+=======
+        $data=$this->giangvien->updiem($mamon['mamon'], $_GET['masinhvien'], $_GET['diemquatrinh'], $_GET['diemcuoiky'], $_GET['diemtongket']);
+>>>>>>> fc76d91db7199150d07fb328b996b8e6f8e8aca7
         if(!isset($_SESSION['sapxep']) || ($_SESSION['sapxep'])=='getinfo_thapcao')
         {
             $svl2=$this->giangvien->getinfo_thapcao($_SESSION['mgv'],$_SESSION['mamon']);

@@ -36,7 +36,7 @@
                 <?php
                 $stt = 1;
                 foreach ($data as $value) { ?>
-                  <tr>
+                  <tr style="font-size:20px;">
                     <td><?php echo $stt++; ?></td>
                     <td><?php echo $value['mamon']; ?></td>
                     <td><?php echo $value['tenmon']; ?></td>
@@ -54,7 +54,7 @@
       </tr>
     </tbody>
   </table>
-  <div style="margin-top: 20px;">
+  <div style="margin-top: 20px;font-size:21px;">
     <b>Tổng số tín chỉ tích lũy: </b><span id="ctl00_c_lblTongSoTinChiTichLuy"><?php echo $tongtin['tongtin']; ?></span>
     <br />
     <b>Trung bình chung tích lũy: </b><span id="ctl00_c_lblTrungBinhTrungTichLuy"><?php if($tongtin['tongtin']==0){echo "";} else{ echo round($tongdiem['tongdiem'] / $tongtin['tongtin'], 2);} ?></span>

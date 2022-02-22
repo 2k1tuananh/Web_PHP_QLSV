@@ -43,6 +43,7 @@
                     </th>
                 </tr>
                 <script>
+<<<<<<< HEAD
                 $(document).ready(function() {
                     $("button.capnhat").click(function() {
                         var masinhvien = ".masinhvien" + $(this).attr("id");
@@ -86,6 +87,29 @@
                     });   
                 });
             </script>
+=======
+                        $("button.capnhat").click(function(){
+                            var masinhvien=".masinhvien"+$(this).attr("id");
+                            var tenmon=".tenmon"+$(this).attr("id");
+                            var diemquatrinh="#diemquatrinh"+$(this).attr("id");
+                            var diemcuoiky="#diemcuoiky"+$(this).attr("id");
+                            var infomsv= $(`${masinhvien}`).attr('id');
+                            var infotm= $(`${tenmon}`).attr('id');
+                            var infodqt = $(`${diemquatrinh}`).val();
+                            var infodck= $(`${diemcuoiky}`).val();
+                            if(parseFloat(infodqt)>=7 && parseFloat(infodck)>parseFloat(infodqt))
+                            {
+                                var infodtk= infodck;
+                            }
+                            else{
+                                var infodtk= infodqt*0.4+infodck*0.6;
+                            }
+                            $.get("./index.php",{controller:"giangvien",action:"updiem", masinhvien:infomsv, diemquatrinh:infodqt, tenmon:infotm, diemcuoiky:infodck, diemtongket:infodtk}, function(data) {
+                                $("#bangdiem").html(data);
+                            })   
+                        });
+                </script>
+>>>>>>> fc76d91db7199150d07fb328b996b8e6f8e8aca7
                 <?php if($svl2!=0){ $stt=0; foreach ($svl2 as $info){ $stt++; ?>
                     <tr>
                     <td class="hovaten<?= $stt?>" id="<?= $info['hovaten']?>"name="hovaten" style="border: 1px solid #dddddd;

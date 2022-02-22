@@ -19,6 +19,20 @@ final class DatabaseConnection {
     
     
     // private function __wakeup() {}
+    // final public function __clone()
+    // {
+    //     throw new Exception('Feature disabled.');
+    // }
+
+    // /**
+    //  * Disable the wakeup of this class.
+    //  * 
+    //  * @return void
+    //  */
+    // final public function __wakeup()
+    // {
+    //     throw new Exception('Feature disabled.');
+    // }
     
      
     public static function connect($host, $dbName, $user, $password){
