@@ -106,12 +106,24 @@ class daotao_controller {
     function lichdangkyhoc()
     {
         if (isset($_POST['check']) && $_POST['check']!="") {
-            
-            foreach($_POST['check'] as $value) {
-               //Xử lý các phần tử được chọn
-               $this->daotao->themvaolichdkhoc($value,$_POST['ngaybatdau'],$_POST['ngayketthuc']);
+            if($_POST['ngaybatdau'] == null)
+            {
+                echo "<script>alert('Ngày bắt đầu không được để trống')</script>";
             }
+            else if($_POST['ngayketthuc'] == null)
+            {
+                echo "<script>alert('Ngày kết thúc không được để trống')</script>";
+            }
+            else
+            {
+                foreach($_POST['check'] as $value) {
+                    //Xử lý các phần tử được chọn
+                    $this->daotao->themvaolichdkhoc($value,$_POST['ngaybatdau'],$_POST['ngayketthuc']);
+                 }
+            }
+           
         }
+        
         $data_cn=$this->daotao->getAllData("chuyennganh");
         $data=$this->daotao->getAllData("monhoc");
         require_once("./view/daotao/ToChucLichDangKyHoc.php");

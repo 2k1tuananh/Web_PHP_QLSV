@@ -238,8 +238,8 @@
         }
 
         public function timkiemgiangvientheochuyennganh($timkiem)
-        {
-            $sql = "select * from  `giangvien`  where  chuyennganh = '$timkiem' ";
+        { 
+            $sql = "select * from  `giangvien`  where  chuyennganh = '$timkiem' and trangthai = 1 and role_id = 2";
            
             $this->execute($sql);
             if($this->dem()==0){
@@ -255,7 +255,7 @@
 
         public function timkiemgiangvien($timkiem)
         {
-            $sql = "select * from  `giangvien`  where  (magiangvien like '%$timkiem%' or hovaten like '%$timkiem%') ";
+            $sql = "select * from  `giangvien`  where  (magiangvien like '%$timkiem%' or hovaten like '%$timkiem%') and role_id = 2 ";
            
             $this->execute($sql);
             if($this->dem()==0){
@@ -330,14 +330,14 @@
         }
         public function getinfo_gvtt($tt){
             if($tt=="Tất cả"){
-                $sql = "select * from giangvien";
+                $sql = "select * from giangvien where trangthai=1 and role_id = 2";
             }
             else{
                 if($tt=="Đang dạy"){
-                    $sql = "select * from giangvien where trangthai=1";
+                    $sql = "select * from giangvien where trangthai=1 and role_id = 2";
                 }
                 else{
-                    $sql = "select * from giangvien where trangthai=0";
+                    $sql = "select * from giangvien where trangthai=0 and role_id = 2";
                 }
             }
             return $this->execute($sql);
@@ -359,7 +359,10 @@
             }
             return $data;
         }
-
+        public function tkb_timkiemtheocn($key,$machuyennganh){
+            $sql=" SELECT DISTINCT(monhoc.mamon), monhoc.tenmon, monhoc.sotinchi, monhoc.thu, monhoc.ca, giangvien.hovaten FROM monhoc INNER JOIN `gv-sv-lop` as gv on monhoc.mamon=gv.mamon INNER JOIN giangvien on gv.magiangvien= giangvien.magiangvien where ( monhoc.tenmon like '%$key%' or monhoc.mamon like '%$key%' ) and monhoc.chuyennganh='$machuyennganh' ";
+            return $this->execute($sql);
+        }
         public function themmon($mm,$tm,$stc,$ca,$thu,$cn){
             $sql="INSERT INTO `monhoc`( `mamon`, `tenmon`, `sotinchi`, `chuyennganh`, `thu`, `ca`) 
             VALUES ('$mm','$tm','$stc','$cn','$thu','$ca')";
