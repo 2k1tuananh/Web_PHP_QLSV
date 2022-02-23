@@ -210,7 +210,6 @@
                         var infotm = $(`${tenmon}`).attr('id');
                         var infodqt = $(`${diemquatrinh}`).val();
                         var infodck = $(`${diemcuoiky}`).val();
-<<<<<<< HEAD
                         if(infodck !='')
                         {
                             if (parseFloat(infodqt) >= 7 && parseFloat(infodck) > parseFloat(infodqt)) {
@@ -242,25 +241,6 @@
                             })
                         }
                     });   
-=======
-                        if (parseFloat(infodqt) >= 7 && parseFloat(infodck) > parseFloat(infodqt)) {
-                            var infodtk = infodck;
-                        } else {
-                            var infodtk = infodqt * 0.4 + infodck * 0.6;
-                        }
-                        $.get("./index.php", {
-                            controller: "giangvien",
-                            action: "updiem",
-                            masinhvien: infomsv,
-                            diemquatrinh: infodqt,
-                            tenmon: infotm,
-                            diemcuoiky: infodck,
-                            diemtongket: infodtk
-                        }, function(data) {
-                            $("#bangdiem").html(data);
-                        })
-                    });
->>>>>>> fc76d91db7199150d07fb328b996b8e6f8e8aca7
                 });
             </script>
             <?php if ($svl != "0") {

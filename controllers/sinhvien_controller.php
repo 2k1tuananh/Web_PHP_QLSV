@@ -81,6 +81,12 @@ class sinhvien_controller
         date_default_timezone_set("Asia/Ho_Chi_Minh");
         $giohientai=date('Y-m-d H:i:s');
         $data=$this->db->getdatalichdk($giohientai);
+        if(mysqli_num_rows($data)>0){
+            $giodk=$this->db->giodk($giohientai);
+        }
+        else{
+            $giodk=$this->db->giocbdk($giohientai);
+        }
         $data1=$this->db->getdatamondk($_SESSION['msv']);
         $data2=$this->db->getmamondk($_SESSION['msv']);
         require_once("./view/sinhvien/DangKyHoc.php");

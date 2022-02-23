@@ -300,6 +300,28 @@
             $sql = "SELECT * FROM `lickdkhoc` INNER JOIN monhoc on lickdkhoc.mamon=monhoc.mamon INNER JOIN giangvienmonhoc on giangvienmonhoc.mamon=lickdkhoc.mamon WHERE lickdkhoc.ngaybatdau<'$tg' AND lickdkhoc.ngayketthuc>'$tg'";
             return $this->execute($sql);
         }
+        public function giodk($tg){
+            $sql = "SELECT * FROM `lickdkhoc` WHERE lickdkhoc.ngaybatdau<'$tg' AND lickdkhoc.ngayketthuc>'$tg' ORDER BY ngaybatdau ASC LIMIT 1";
+            $this->execute($sql);
+            if($this->dem()!=0){
+                $data = mysqli_fetch_array($this->result);
+            }
+            else{
+                $data = [];
+            }
+            return $data;
+        }
+        public function giocbdk($tg){
+            $sql = "SELECT * FROM `lickdkhoc` WHERE lickdkhoc.ngaybatdau>'$tg' ORDER BY ngaybatdau ASC LIMIT 1";
+            $this->execute($sql);
+            if($this->dem()!=0){
+                $data = mysqli_fetch_array($this->result);
+            }
+            else{
+                $data = [];
+            }
+            return $data;
+        }
         public function getdatamondk($msv){
             $sql = "SELECT * FROM `gv-sv-lop` as gv INNER JOIN monhoc on gv.mamon= monhoc.mamon WHERE gv.masinhvien='$msv'";
             return $this->execute($sql);

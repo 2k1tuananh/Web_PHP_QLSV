@@ -160,22 +160,23 @@ body.light-theme .buttons .button:hover {
             <h2>Thông báo thời gian đăng ký học:</h2>
            <div class="time">
                 <div class="times_item">
-                <span>22/2/2022</span>
-                <span>11:22AM</span>
+                <span><?= substr($giodk['ngaybatdau'],0,-8);?></span>
+                <span><?= substr($giodk['ngaybatdau'],-8);?></span>
                 </div>
             <i class="fa-solid fa-arrow-right"></i>
             <div class="times_item">
-                <span>24/2/2022</span>
-                <span>11:22AM</span>
+                <span><?= substr($giodk['ngayketthuc'],0,-8);?></span>
+                <span><?= substr($giodk['ngayketthuc'],-8);?></span>
             </div>
-            
            </div>
            
         </div>
+        <?php if($giohientai<$giodk['ngaybatdau']){ ?>
         <div class="big-notice">
             Bạn chưa được đăng ký học
             <br />
         </div>
+        <?php } else{ ?>
         <h2 style="text-align: center; font-weight: bold;">
             Danh sách môn được đăng ký
         </h3>
@@ -294,6 +295,7 @@ body.light-theme .buttons .button:hover {
             </div>
 
         </div>
+        <?php }?>
     </div>
     <!-- End Right -->
 </div>
